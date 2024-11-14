@@ -1,0 +1,4 @@
+../Core/Src/morse.c:40:6:delay_ms	1
+../Core/Src/morse.c:43:6:sendLetterMorse	5
+../Core/Src/morse.c:52:6:sendMorseCode	4
+../Core/Src/morse.c:69:6:sendMessageMorse	3

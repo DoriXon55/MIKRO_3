@@ -1,0 +1,11 @@
+../Core/Src/usart.c:38:6:ring_buffer_setup	24	static
+../Core/Src/usart.c:46:9:USART_kbhit	4	static
+../Core/Src/usart.c:54:9:USART_getchar	16	static
+../Core/Src/usart.c:63:9:USART_getline	24	static
+../Core/Src/usart.c:88:6:USART_send	24	static,ignoring_inline_asm
+../Core/Src/usart.c:123:6:USART_fsend	152	static,ignoring_inline_asm
+../Core/Src/usart.c:152:6:HAL_UART_TxCpltCallback	24	static
+../Core/Src/usart.c:162:6:HAL_UART_RxCpltCallback	16	static
+../Core/Src/usart.c:177:6:MX_USART2_UART_Init	8	static
+../Core/Src/usart.c:209:6:HAL_UART_MspInit	184	static
+../Core/Src/usart.c:253:6:HAL_UART_MspDeInit	16	static

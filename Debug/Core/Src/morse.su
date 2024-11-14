@@ -1,0 +1,4 @@
+../Core/Src/morse.c:40:6:delay_ms	16	static
+../Core/Src/morse.c:43:6:sendLetterMorse	16	static
+../Core/Src/morse.c:52:6:sendMorseCode	24	static
+../Core/Src/morse.c:69:6:sendMessageMorse	16	static

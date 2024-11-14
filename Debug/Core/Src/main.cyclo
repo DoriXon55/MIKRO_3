@@ -1,0 +1,4 @@
+../Core/Src/main.c:84:6:FrameRd	19
+../Core/Src/main.c:171:5:main	1
+../Core/Src/main.c:220:6:SystemClock_Config	4
+../Core/Src/main.c:281:6:Error_Handler	1
