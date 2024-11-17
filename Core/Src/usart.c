@@ -21,12 +21,7 @@
 #include "usart.h"
 
 /* USER CODE BEGIN 0 */
-typedef struct {
-	uint8_t* buffer;
-	uint32_t readIndex;
-	uint32_t writeIndex;
-	uint32_t mask;
-}ring_buffer;
+
 
 ring_buffer rxRingBuffer;
 ring_buffer txRingBuffer;

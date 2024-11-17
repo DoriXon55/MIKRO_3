@@ -39,12 +39,22 @@ extern UART_HandleTypeDef huart2;
 /* USER CODE BEGIN Private defines */
 #define TX_BUFFER_SIZE 512
 #define RX_BUFFER_SIZE 256
+typedef struct {
+	uint8_t* buffer;
+	uint32_t readIndex;
+	uint32_t writeIndex;
+	uint32_t mask;
+}ring_buffer;
 /* USER CODE END Private defines */
 
 void MX_USART2_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+int16_t USART_getchar();
+void USART_fsend(char* format,...);
+uint8_t USART_getline();
+void USART_send();
+uint8_t USART_kbhit();
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

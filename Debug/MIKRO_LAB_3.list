@@ -27,25 +27,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  0000705c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000c3e8  00000000  00000000  0000708c  2**0
+ 12 .debug_info   0000c424  00000000  00000000  0000708c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00002119  00000000  00000000  00013474  2**0
+ 13 .debug_abbrev 0000212e  00000000  00000000  000134b0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000a48  00000000  00000000  00015590  2**3
+ 14 .debug_aranges 00000a48  00000000  00000000  000155e0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_rnglists 000007d4  00000000  00000000  00015fd8  2**0
+ 15 .debug_rnglists 000007d4  00000000  00000000  00016028  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  000262fa  00000000  00000000  000167ac  2**0
+ 16 .debug_macro  000262fa  00000000  00000000  000167fc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000daa9  00000000  00000000  0003caa6  2**0
+ 17 .debug_line   0000daa9  00000000  00000000  0003caf6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000e7f4f  00000000  00000000  0004a54f  2**0
+ 18 .debug_str    000e7f6d  00000000  00000000  0004a59f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  0013249e  2**0
+ 19 .comment      00000043  00000000  00000000  0013250c  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002e2c  00000000  00000000  001324e4  2**2
+ 20 .debug_frame  00002e2c  00000000  00000000  00132550  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000067  00000000  00000000  00135310  2**0
+ 21 .debug_line_str 00000067  00000000  00000000  0013537c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -635,9 +635,9 @@ void MX_GPIO_Init(void)
  80006e0:	48000c00 	.word	0x48000c00
 
 080006e4 <FrameRd>:
+
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
 
 void FrameRd()
 {
@@ -1357,6 +1357,9 @@ void SysTick_Handler(void)
   HAL_IncTick();
  8000a9e:	f000 faf5 	bl	800108c <HAL_IncTick>
   /* USER CODE BEGIN SysTick_IRQn 1 */
+  static uint32_t morseTime = 0;       // Czas na operacje Morse’a
+  static uint8_t morseState = 0;      // Stan kodu Morse'a
+  extern const char *morsePtr; // Wskaźnik na bieżący kod Morse'a
   static uint32_t lastToggleTime = 0;
   uint32_t currentTime = HAL_GetTick();
  8000aa2:	f000 fb07 	bl	80010b4 <HAL_GetTick>
@@ -1450,6 +1453,8 @@ void SysTick_Handler(void)
  8000b3a:	e000      	b.n	8000b3e <SysTick_Handler+0xa6>
 	  break;
  8000b3c:	bf00      	nop
+
+
   }
   /* USER CODE END SysTick_IRQn 1 */
 }

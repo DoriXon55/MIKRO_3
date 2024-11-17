@@ -188,6 +188,9 @@ void SysTick_Handler(void)
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
+  static uint32_t morseTime = 0;       // Czas na operacje Morse’a
+  static uint8_t morseState = 0;      // Stan kodu Morse'a
+  extern const char *morsePtr; // Wskaźnik na bieżący kod Morse'a
   static uint32_t lastToggleTime = 0;
   uint32_t currentTime = HAL_GetTick();
   uint32_t toggleTimeMs = 0;
@@ -215,6 +218,8 @@ void SysTick_Handler(void)
 	  		  		  lastToggleTime = currentTime;
 	  		  	  }
 	  break;
+
+
   }
   /* USER CODE END SysTick_IRQn 1 */
 }

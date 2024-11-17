@@ -69,17 +69,11 @@ float nr = 0;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-extern int16_t USART_getchar();
-extern void USART_fsend();
-extern uint8_t USART_getline();
-extern void USART_send();
-extern uint8_t USART_kbhit();
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
 
 void FrameRd()
 {
@@ -162,6 +156,7 @@ void FrameRd()
 	}
 }
 
+
 /* USER CODE END 0 */
 
 /**
@@ -207,7 +202,6 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
